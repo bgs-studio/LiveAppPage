@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Tour</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+  <header class="text-center p-6">
+    <h1 id="tour-title" class="text-3xl font-bold">Loading...</h1>
+    <p id="tour-desc" class="text-gray-400"></p>
+  </header>
+  <main class="flex justify-center items-center h-[80vh]">
+      <iframe id="tour-frame" src="" width="80%" height="500px" frameborder="0" allowfullscreen class="rounded-xl shadow-2xl"></iframe>
+    <div class="fixed bottom-4 right-4 flex flex-col gap-2 z-50">
+  <button onclick="likeTour()" class="bg-white text-black px-4 py-2 rounded-full shadow-lg hover:bg-gray-200 transition">
+    👍 Like
+  </button>
+  <button onclick="shareTour()" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition">
+    🔗 Share
+  </button>
+</div>  
+  </main>
+
+  <script src="assets/js/tours.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tourId = params.get("id");
+
+    if (tours[tourId]) {
+      document.getElementById("tour-title").textContent = tours[tourId].title;
+      document.getElementById("tour-desc").textContent = tours[tourId].description;
+      document.getElementById("tour-frame").src = tours[tourId].url;
+    } else {
+      document.getElementById("tour-title").textContent = "Tour not found";
+    }
+
+    function shareTour() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Tour link copied to clipboard!");
+    });
+  }
+ function likeTour() {
+   const params = new URLSearchParams(window.location.search);
+  const tourId = params.get("id") || "unknown";  // Default fallback
+
+  // Construct the path to the tour
+  const tourPath = `Tours/${tourId}/index.html`;
+
+  // Load it in the iframe
+  document.getElementById("tour-frame").src = tourPath;
+
+  fetch('https://script.google.com/macros/s/AKfycbzW7d9enN1QzG1HbcaBrOifIUJtLTsYmNrLXFibj4GSkgTFrYSytN-Dkous7ldoH49W/exec', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ tourId })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === 'success') {
+      alert("Thanks for liking Tour " + tourId + "!");
+    } else {
+      alert("There was a problem.");
+    }
+  })
+  .catch(err => alert("Error: " + err.message));
+}
+  </script>
+</body>
+</html>
