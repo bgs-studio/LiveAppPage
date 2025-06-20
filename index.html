@@ -13,17 +13,8 @@
     <h1 class="text-5xl font-bold mb-4 animate-fade-in">Explore Gilgit Baltistan</h1>
     <p class="text-lg text-gray-400 animate-fade-in-slow">Click on a tour to start exploring in 360°</p>
   </header>
-  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
-    <a href="tourPage.html?id=1" class="group transform transition duration-500 hover:scale-105">
-      <div class="relative overflow-hidden rounded-2xl shadow-lg">
-        <img src="assets/img/Katpana.png" alt="Katpana" class="w-full h-64 object-cover group-hover:blur-sm transition duration-300">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-          <p class="text-xl font-semibold">Katpana Lake</p>
-        </div>
-      </div>
-    </a>
-    <!-- grid next item -->
-  </main>
+ <main id="tours-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
+</main>
   <footer class="bg-dark-blue-100 text-white-700 mt-10 border-t border-gray-300 p-6 text-center text-sm">
     <div class="flex flex-col items-center justify-center space-y-2 sm:flex-row sm:space-y-0 sm:space-x-4">
     <!-- Logo -->
@@ -45,3 +36,57 @@
 </footer>
 </body>
 </html>
+<script src="assets/js/tours.js"></script>
+<script>
+  const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTskUUA7W8ImTqQZExTWO69PYSGhnAvoEPI0a9SfZqXL-EmjNM94mfIXhVY-aKw7PbgRqND_skWVYZB/pub?output=csv';
+
+  async function fetchLikeCounts() {
+    const res = await fetch(sheetURL);
+    const csv = await res.text();
+  const lines = csv.trim().split('\n');
+  const likeCounts = {};
+
+  for (let i = 1; i < lines.length; i++) {
+    const columns = lines[i].split(',');
+
+    const tourId = columns[1].trim(); // Column 2 → index 1
+    if (!tourId) continue;
+
+    if (!likeCounts[tourId]) {
+      likeCounts[tourId] = 0;
+    }
+
+    likeCounts[tourId]++;
+  }
+
+  return likeCounts;
+}
+
+  function renderTours(likeCounts) {
+    const container = document.getElementById("tours-container");
+    container.innerHTML = "";
+
+    for (const id in tours) {
+      const tour = tours[id];
+      const count = likeCounts[id] || 0;
+
+      const tourHTML = `
+        <a href="tourPage.html?id=${tour.tourId}" class="group transform transition duration-500 hover:scale-105">
+          <div class="relative overflow-hidden rounded-2xl shadow-lg">
+            <img src="${tour.image}" alt="${tour.title}" class="w-full h-64 object-cover group-hover:blur-sm transition duration-300">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+              <p class="text-xl font-semibold">${tour.title}</p>
+              <p class="text-xl text-white-400 mt-2">${count} ❤️</p>
+              </div>
+          </div>
+        </a>
+      `;
+      container.insertAdjacentHTML("beforeend", tourHTML);
+    }
+  }
+
+  window.onload = async () => {
+    const likeCounts = await fetchLikeCounts();
+    renderTours(likeCounts);
+  };
+</script>

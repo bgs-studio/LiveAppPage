@@ -7,78 +7,97 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-black text-white">
+
+  <!-- Header -->
   <header class="text-center p-6">
     <h1 id="tour-title" class="text-3xl font-bold">Loading...</h1>
     <p id="tour-desc" class="text-gray-400"></p>
   </header>
+
+  <!-- Back to Home -->
   <a href="index.html" class="fixed top-4 left-4 bg-white text-black px-4 py-2 rounded-full shadow hover:bg-gray-200 transition z-50">
-  ← Back to Home
-</a>
+    ← Back to Home
+  </a>
+
+  <!-- Main Tour Section -->
   <main class="flex justify-center items-center h-[80vh]">
-      <iframe id="tour-frame" src="" width="80%" height="500px" frameborder="0" allowfullscreen class="rounded-xl shadow-2xl"></iframe>
+    <iframe id="tour-frame" src="" width="80%" height="500px" frameborder="0" allowfullscreen class="rounded-xl shadow-2xl"></iframe>
+
+    <!-- Like / Share Buttons -->
     <div class="fixed bottom-4 right-4 flex flex-col gap-2 z-50">
-  <button id="like-btn" onclick="likeTour()" class="bg-gray-300 text-black px-4 py-2 rounded-full transition">
-  ❤️ Like
-  </button>
-  <button onclick="shareTour()" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition">
-    🔗 Share
-  </button>
-</div>  
+      <button id="like-btn" onclick="likeTour()" class="bg-gray-300 text-black px-4 py-2 rounded-full transition">
+        ❤️ Like
+      </button>
+      <button onclick="shareTour()" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition">
+        🔗 Share
+      </button>
+    </div>  
   </main>
 
+  <!-- Tour Data -->
   <script src="assets/js/tours.js"></script>
+
+  <!-- Logic -->
   <script>
     const params = new URLSearchParams(window.location.search);
     const tourId = params.get("id");
 
-    if (tours[tourId]) {
-      document.getElementById("tour-title").textContent = tours[tourId].title;
-      document.getElementById("tour-desc").textContent = tours[tourId].description;
-      document.getElementById("tour-frame").src = tours[tourId].url;
+    const tour = tours[tourId];
+    if (tour) {
+      document.getElementById("tour-title").textContent = tour.title;
+      document.getElementById("tour-desc").textContent = tour.description;
+
+      // ✅ Set correct iframe src to load the virtual tour
+      if (tour.url) {
+        document.getElementById("tour-frame").src = tour.url;
+      }
     } else {
       document.getElementById("tour-title").textContent = "Tour not found";
+      document.getElementById("tour-desc").textContent = "Sorry, we couldn't find this tour.";
     }
 
+    // 🔗 Share logic
     function shareTour() {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      alert("Tour link copied to clipboard!");
-    });
-  }
-  function likeTour() {
-  const params = new URLSearchParams(window.location.search);
-  const tourId = params.get("id") || "Unknown Tour";
-
-  // Get user approximate location (using IP geolocation API)
-  fetch("https://ipapi.co/json")
-    .then(res => res.json())
-    .then(location => {
-      const userLocation = location.city + ", " + location.country;
-
-      // Replace with your form’s actual field entry IDs
-      const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdsOatNZynDCXrLlCQJ4hlnmWRQADNEIrBasA7UFE5YYurBDg/viewform?usp=header";
-      const formData = new URLSearchParams();
-
-      formData.append("entry.602749874", tourId);       // Tour ID field
-      formData.append("entry.825261193", userLocation); // Location field
-
-      return fetch(formURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Tour link copied to clipboard!");
       });
-    })
-    .then(() => {
-      const btn = document.getElementById("like-btn");
-      btn.innerText = "✅ Liked";
-      btn.classList.remove("bg-gray-300");
-      btn.classList.add("bg-green-500", "text-white"); // or "bg-blue-500"
-      btn.disabled = true; // optional: prevent repeat clicks
-    })
-    .catch(() => {
-      alert("Like failed. Try again later.");
-    });
-}
+    }
+
+    // ❤️ Like logic (Google Form submission)
+    function likeTour() {
+      const tourId = params.get("id") || "Unknown";
+
+      // Get user location
+      fetch("https://ipinfo.io/json?token=3f9a8f0f4c6a7b")
+        .then(response => response.json())
+        .then(data => {
+          const userLocation = data.city + ", " + data.country;
+
+          // Google Form Submission
+          const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdsOatNZynDCXrLlCQJ4hlnmWRQADNEIrBasA7UFE5YYurBDg/formResponse";
+          const formData = new URLSearchParams();
+          formData.append("usp", "pp_url");
+          formData.append("entry.602749874", tourId);        // Tour ID field
+          formData.append("entry.825261193", userLocation);  // Location field
+
+          return fetch(formURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+          });
+        })
+        .then(() => {
+          const btn = document.getElementById("like-btn");
+          btn.innerText = "✅ Liked";
+          btn.classList.remove("bg-gray-300");
+          btn.classList.add("bg-green-500", "text-white");
+          btn.disabled = true;
+        })
+        .catch(() => {
+          alert("Like failed. Try again later.");
+        });
+    }
   </script>
 </body>
 </html>
