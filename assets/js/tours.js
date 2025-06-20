@@ -2,7 +2,7 @@ const tours = {
   "1": {
     title: "Katpana Lake 360 Toure",
     description: "Explore Katpana Lake in full 360°",
-    url: "https://example.com/villa-tour"
+    url: "Tours/1/"
   },
   "2": {
     title: "Modern Apartment",
