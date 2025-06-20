@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Tours</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <header class="text-center py-12">
+    <h1 class="text-5xl font-bold mb-4 animate-fade-in">Explore Gilgit Baltistan</h1>
+    <p class="text-lg text-gray-400 animate-fade-in-slow">Click on a tour to start exploring in 360°</p>
+  </header>
+  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
+    <a href="tourPage.html?id=1" class="group transform transition duration-500 hover:scale-105">
+      <div class="relative overflow-hidden rounded-2xl shadow-lg">
+        <img src="assets/img/Katpana.png" alt="Katpana" class="w-full h-64 object-cover group-hover:blur-sm transition duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+          <p class="text-xl font-semibold">Katpana Lake</p>
+        </div>
+      </div>
+    </a>
+    <!-- grid next item -->
+  </main>
+</body>
+</html>
