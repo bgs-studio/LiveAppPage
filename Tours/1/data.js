@@ -1,8 +1,8 @@
 var APP_DATA = {
   "scenes": [
     {
-      "id": "0-0-left-side",
-      "name": "0 Left Side",
+      "id": "0-1",
+      "name": "1",
       "levels": [
         {
           "tileSize": 256,
@@ -45,8 +45,8 @@ var APP_DATA = {
       "infoHotspots": []
     },
     {
-      "id": "1-0-right",
-      "name": "0 right",
+      "id": "1-2",
+      "name": "2",
       "levels": [
         {
           "tileSize": 256,
@@ -127,21 +127,21 @@ var APP_DATA = {
           "yaw": 2.166067111189796,
           "pitch": 0.31537580858478265,
           "rotation": 0,
-          "target": "0-0-left-side"
+          "target": "0-1"
         }
       ],
       "infoHotspots": [
         {
           "yaw": -3.0827392595533514,
           "pitch": 0.17530052853606293,
-          "title": "Welcome To Katpana Lake",
-          "text": "Text"
+          "title": "Assalam o Alaikum",
+          "text": "Welcome to Katpana Lake!"
         },
         {
           "yaw": 0.35059603164120823,
           "pitch": 0.10636633989131639,
-          "title": "Katpana Lake",
-          "text": "Text"
+          "title": "Intro",
+          "text": "Katpana Lake"
         }
       ]
     },
@@ -184,7 +184,7 @@ var APP_DATA = {
           "yaw": -0.24114739473280622,
           "pitch": 0.23829555699502514,
           "rotation": 0.7853981633974483,
-          "target": "1-0-right"
+          "target": "1-2"
         }
       ],
       "infoHotspots": []
@@ -225,7 +225,14 @@ var APP_DATA = {
           "target": "2-1-left-side"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [
+        {
+          "yaw": -0.4708752040280686,
+          "pitch": 0.10440686423497425,
+          "title": "Information",
+          "text": "Katpana Lake hosts a diverse range of wildlife, including both aquatic and land-based species."
+        }
+      ]
     },
     {
       "id": "5-2-right",
@@ -272,21 +279,21 @@ var APP_DATA = {
           "yaw": -0.1946996731099322,
           "pitch": 0.12148295282526078,
           "rotation": 0,
-          "target": "0-0-left-side"
+          "target": "0-1"
         }
       ],
       "infoHotspots": [
         {
           "yaw": 0.4930436396044744,
           "pitch": 0.1266228265207996,
-          "title": "Katpana Lake",
-          "text": "Text"
+          "title": "Intro",
+          "text": "The lake is clean and frequently visited by both locals and tourists from all over Pakistan."
         },
         {
           "yaw": 2.9004634980137336,
           "pitch": 0.08627931827506785,
-          "title": "Population area",
-          "text": "Text"
+          "title": "Information",
+          "text": "The area around Katpana Lake is inhabited by local communities."
         }
       ]
     },
@@ -326,8 +333,8 @@ var APP_DATA = {
           "target": "5-2-right"
         },
         {
-          "yaw": 1.7799113617545652,
-          "pitch": 0.24125035783677973,
+          "yaw": 1.7594248192177622,
+          "pitch": 0.17835521312748348,
           "rotation": 0,
           "target": "7-4-right"
         }
@@ -414,7 +421,14 @@ var APP_DATA = {
           "target": "7-4-right"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [
+        {
+          "yaw": -2.3046170016695644,
+          "pitch": 0.0585799344173239,
+          "title": "Information",
+          "text": "Despite its high-altitude desert surroundings, Katpana Lake is dotted with surprising pockets of greenery that add to its unique and serene beauty."
+        }
+      ]
     },
     {
       "id": "9-entrybb_jpg",
@@ -440,8 +454,8 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": -2.1665807936401364,
-        "pitch": -0.260094340725022,
+        "yaw": 1.1720700410625255,
+        "pitch": 0.07295808308063911,
         "fov": 1.2599180821480807
       },
       "linkHotspots": [
@@ -449,7 +463,7 @@ var APP_DATA = {
           "yaw": 0.2806229118108643,
           "pitch": 0.19942585341538788,
           "rotation": 0,
-          "target": "1-0-right"
+          "target": "1-2"
         }
       ],
       "infoHotspots": []
@@ -460,6 +474,6 @@ var APP_DATA = {
     "mouseViewMode": "drag",
     "autorotateEnabled": true,
     "fullscreenButton": true,
-    "viewControlButtons": true
+    "viewControlButtons": false
   }
 };
