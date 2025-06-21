@@ -24,32 +24,25 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": -1.0586815609300952,
-        "pitch": 0.11266482734547623,
+        "yaw": -0.7707914272940393,
+        "pitch": 0.06881803703389622,
         "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": -0.03218355087196478,
-          "pitch": 0.3650415572587882,
-          "rotation": 0,
+          "yaw": 0.01052513381844733,
+          "pitch": 0.3275261033709054,
+          "rotation": 6.283185307179586,
           "target": "5-2-right"
         },
         {
-          "yaw": -1.8181123909396781,
-          "pitch": 0.12435762694837038,
-          "rotation": 0.7853981633974483,
+          "yaw": -1.5555600448586588,
+          "pitch": 0.3448794884994584,
+          "rotation": 0,
           "target": "2-1-left-side"
         }
       ],
-      "infoHotspots": [
-        {
-          "yaw": -0.45195370861580564,
-          "pitch": 0.08997467507113122,
-          "title": "Katpana Lake",
-          "text": "This is a natural lake located in the heart center of&nbsp; Skardu Baltistan"
-        }
-      ]
+      "infoHotspots": []
     },
     {
       "id": "1-0-right",
@@ -75,14 +68,20 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": -0.30911756232389287,
+        "pitch": 0.13933009839328392,
+        "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": 0.9343481624606209,
-          "pitch": 0.21880487450837194,
+          "yaw": -2.6346969062519427,
+          "pitch": 0.15103407458651752,
+          "rotation": 0.7853981633974483,
+          "target": "9-entrybb_jpg"
+        },
+        {
+          "yaw": 1.0359580046146064,
+          "pitch": 0.2576237312568992,
           "rotation": 5.497787143782138,
           "target": "3-1-right"
         }
@@ -113,25 +112,38 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": 0.4772941219739604,
+        "pitch": -0.1806425315577549,
+        "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": -1.424466149583317,
-          "pitch": 0.2110537118523368,
+          "yaw": -1.06744303783511,
+          "pitch": 0.34076446228259805,
           "rotation": 0.7853981633974483,
           "target": "4-2-left-side"
         },
         {
-          "yaw": 2.1673467276857714,
-          "pitch": 0.173285937857937,
+          "yaw": 2.166067111189796,
+          "pitch": 0.31537580858478265,
           "rotation": 0,
           "target": "0-0-left-side"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [
+        {
+          "yaw": -3.0827392595533514,
+          "pitch": 0.17530052853606293,
+          "title": "Welcome To Katpana Lake",
+          "text": "Text"
+        },
+        {
+          "yaw": 0.35059603164120823,
+          "pitch": 0.10636633989131639,
+          "title": "Katpana Lake",
+          "text": "Text"
+        }
+      ]
     },
     {
       "id": "3-1-right",
@@ -157,22 +169,22 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": 1.6490328692215135,
+        "pitch": 0.001016719542409561,
+        "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": -0.11482903233252273,
-          "pitch": 0.25681444867189107,
+          "yaw": -2.9174675635753147,
+          "pitch": 0.23320559542160524,
           "rotation": 0,
-          "target": "1-0-right"
+          "target": "5-2-right"
         },
         {
-          "yaw": -2.92823991688976,
-          "pitch": 0.17150880299354831,
-          "rotation": 5.497787143782138,
-          "target": "5-2-right"
+          "yaw": -0.24114739473280622,
+          "pitch": 0.23829555699502514,
+          "rotation": 0.7853981633974483,
+          "target": "1-0-right"
         }
       ],
       "infoHotspots": []
@@ -201,14 +213,14 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": 0.22036617556321403,
+        "pitch": -0.1465174800397282,
+        "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": 2.96741023737438,
-          "pitch": 0.12063937998444096,
+          "yaw": 2.6917812446500786,
+          "pitch": 0.15492097351270218,
           "rotation": 5.497787143782138,
           "target": "2-1-left-side"
         }
@@ -239,36 +251,42 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": 0.29443137338020264,
+        "pitch": -0.024490840193067243,
+        "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": 1.5877217536744164,
-          "pitch": 0.1659325242720513,
+          "yaw": 1.6738583373907652,
+          "pitch": 0.2511334747333134,
+          "rotation": 0,
+          "target": "6-3-right"
+        },
+        {
+          "yaw": -1.639982320869997,
+          "pitch": 0.2719006624779077,
           "rotation": 6.283185307179586,
           "target": "6-3-right"
         },
         {
-          "yaw": 0.5722054956483511,
-          "pitch": 0.10875348161801313,
+          "yaw": -0.1946996731099322,
+          "pitch": 0.12148295282526078,
           "rotation": 0,
           "target": "0-0-left-side"
-        },
-        {
-          "yaw": -1.629534350056085,
-          "pitch": 0.15442744011941656,
-          "rotation": 0,
-          "target": "3-1-right"
         }
       ],
       "infoHotspots": [
         {
-          "yaw": 3.069399108017973,
-          "pitch": 0.10562302287924652,
-          "title": "Katpana valley&nbsp;",
-          "text": "Here people live in and this is there home."
+          "yaw": 0.4930436396044744,
+          "pitch": 0.1266228265207996,
+          "title": "Katpana Lake",
+          "text": "Text"
+        },
+        {
+          "yaw": 2.9004634980137336,
+          "pitch": 0.08627931827506785,
+          "title": "Population area",
+          "text": "Text"
         }
       ]
     },
@@ -296,20 +314,20 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": -2.564836674412099,
-        "pitch": 0.10598648455729176,
+        "yaw": 2.7487808958290136,
+        "pitch": -0.07123930821995828,
         "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": -1.5241052218666358,
-          "pitch": 0.2020062960317368,
+          "yaw": -1.5101911116738762,
+          "pitch": 0.2257876343355214,
           "rotation": 0,
           "target": "5-2-right"
         },
         {
-          "yaw": 1.796615098070033,
-          "pitch": 0.2559676829987474,
+          "yaw": 1.7799113617545652,
+          "pitch": 0.24125035783677973,
           "rotation": 0,
           "target": "7-4-right"
         }
@@ -340,20 +358,20 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "pitch": 0,
-        "yaw": 0,
-        "fov": 1.5707963267948966
+        "yaw": 1.6657009465485997,
+        "pitch": -0.15989390140854098,
+        "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": 1.3219443572254619,
-          "pitch": 0.28270294658890016,
-          "rotation": 0,
+          "yaw": 1.8836427511701253,
+          "pitch": 0.27748554137842696,
+          "rotation": 5.497787143782138,
           "target": "8-5-right"
         },
         {
-          "yaw": -2.5672021657501745,
-          "pitch": 0.13720047961611037,
+          "yaw": -2.6014737610319294,
+          "pitch": 0.30699937676530986,
           "rotation": 0,
           "target": "6-3-right"
         }
@@ -384,25 +402,63 @@ var APP_DATA = {
       ],
       "faceSize": 2048,
       "initialViewParameters": {
-        "yaw": -2.149400655523616,
-        "pitch": -0.33369587098534303,
+        "yaw": -2.4164880924503507,
+        "pitch": -0.2411944469080467,
         "fov": 1.2599180821480807
       },
       "linkHotspots": [
         {
-          "yaw": 1.6565763671684444,
-          "pitch": 0.1680118562000068,
-          "rotation": 0,
+          "yaw": 1.9048611125276356,
+          "pitch": 0.15877435527733041,
+          "rotation": 5.497787143782138,
           "target": "7-4-right"
+        }
+      ],
+      "infoHotspots": []
+    },
+    {
+      "id": "9-entrybb_jpg",
+      "name": "Entrybb_jpg",
+      "levels": [
+        {
+          "tileSize": 256,
+          "size": 256,
+          "fallbackOnly": true
+        },
+        {
+          "tileSize": 512,
+          "size": 512
+        },
+        {
+          "tileSize": 512,
+          "size": 1024
+        },
+        {
+          "tileSize": 512,
+          "size": 2048
+        }
+      ],
+      "faceSize": 2048,
+      "initialViewParameters": {
+        "yaw": -2.1665807936401364,
+        "pitch": -0.260094340725022,
+        "fov": 1.2599180821480807
+      },
+      "linkHotspots": [
+        {
+          "yaw": 0.2806229118108643,
+          "pitch": 0.19942585341538788,
+          "rotation": 0,
+          "target": "1-0-right"
         }
       ],
       "infoHotspots": []
     }
   ],
-  "name": "Project Title",
+  "name": "360 Tour Katpana",
   "settings": {
     "mouseViewMode": "drag",
-    "autorotateEnabled": false,
+    "autorotateEnabled": true,
     "fullscreenButton": true,
     "viewControlButtons": true
   }
