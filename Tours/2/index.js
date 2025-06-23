@@ -136,6 +136,11 @@
   } else {
     document.body.classList.add('fullscreen-disabled');
   }
+ if (sceneNameElement.enabled && data.settings.viewTitleBar) {
+      sceneNameElement.classList.add('enabled');
+    }else
+    sceneNameElement.classList.remove('enabled');
+
 
   // Set handler for scene list toggle.
   sceneListToggleElement.addEventListener('click', toggleSceneList);
