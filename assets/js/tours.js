@@ -11,4 +11,10 @@ const tours = {
     image: "assets/img/upper-kachura-lake.jpg",
     url: "Tours/2/",
   },
+  "3": {
+    title: "Khaplu Sino Tower's way Toure",
+    description: "Explore Sino tower way in full 360 view",
+    image: "assets/img/sino.jpg",
+    url: "Tours/3/",
+  },
 };
